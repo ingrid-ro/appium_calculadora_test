@@ -44,9 +44,15 @@ public class CalculatoraTeste {
     @Test
     void testeCalculadora(){
 
+        //codigo que vai realizar o teste
         driver.findElement(By.id("com.android.calculator2:id/digit_2")).click();
-        driver.findElement(By.id("com.android.calculator2:id/op_add")).click();
         driver.findElement(By.id("com.android.calculator2:id/digit_6")).click();
+        driver.findElement(By.id("com.android.calculator2:id/op_add")).click();
+        driver.findElement(By.id("com.android.calculator2:id/digit_4")).click();
+        driver.findElement(By.id("com.android.calculator2:id/eq")).click();
+        Assertions.assertEquals("30",driver.findElement(By.id("com.android.calculator2:id/result")).getText());
+        driver.findElement(By.id("com.android.calculator2:id/op_div")).click();
+        driver.findElement(By.id("com.android.calculator2:id/digit_3")).click();
         driver.findElement(By.id("com.android.calculator2:id/result")).click();
         Assertions.assertEquals("10",driver.findElement(By.id("com.android.calculator2:id/result")).getText());
 
